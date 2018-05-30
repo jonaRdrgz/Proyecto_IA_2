@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<!-- Datos de Prueba-->
+
+<RequestedServices>
+  <RequestedService ID ="000001">
+    <Customer Name ="Loriana Ulate Rodríguez"/>
+    <Service Code ="ICE" />
+  </RequestedService>
+  <RequestedService ID ="000002">
+    <Customer Name ="Oscar Araya Castro"/>
+    <Service Code ="ICG" />
+  </RequestedService>
+  <RequestedService ID ="000003">
+    <Customer Name ="Gamaliel Rodríguez Vargas"/>
+    <Service Code ="RCE" />
+  </RequestedService>
+  <RequestedService ID ="000004">
+    <Customer Name ="Cristal Muñoz Torrez"/>
+    <Service Code ="ILA" />
+  </RequestedService>
+
+
+</RequestedServices>

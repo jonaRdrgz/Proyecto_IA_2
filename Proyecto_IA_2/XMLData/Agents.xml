@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Datos de prueba-->
+<Agents>
+  <Agent ID ="000001"  Name ="Izcar Muñoz Torrez">
+    <Service Code ="ICE" />
+    <Service Code ="ICG" />
+    <Service Code ="ILA" />
+    <Service Code ="RCE" />
+  </Agent>
+  <Agent ID ="000002"  Name ="Luis Cordero Leonhardes">
+    <Service Code ="ICE" />
+    <Service Code ="RLA" />
+    <Service Code ="RCG" />
+    <Service Code ="RCE" />
+  </Agent>
+  <Agent ID ="000002"  Name ="Jonathan Rodríguez Martínez">
+    <Service Code ="RLA" />
+    <Service Code ="ILA" />
+    <Service Code ="RCE" />
+  </Agent>
+  <Agent ID ="000002"  Name ="Rafael Mora Porras">
+    <Service Code ="RCE" />
+    <Service Code ="RCG" />
+  </Agent>  
+</Agents>

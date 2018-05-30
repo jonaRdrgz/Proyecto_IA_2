@@ -1,4 +1,7 @@
-﻿namespace Proyecto_IA_2
+﻿
+
+
+namespace Proyecto_IA_2
 {
     partial class Form1
     {
@@ -32,6 +35,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "Form1";
+
+
+
+
         }
 
         #endregion
