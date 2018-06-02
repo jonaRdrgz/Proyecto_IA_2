@@ -17,28 +17,29 @@ namespace Proyecto_IA_2
         [STAThread]
         static void Main()
         {
-            IEnumerable<Agent> c = LoadAgents();
-            IEnumerable<RequestedService> rs = LoadRequestedServices();
-            Console.WriteLine("\n\n");
+            //IEnumerable<Agent> c = LoadAgents();
+            //IEnumerable<RequestedService> rs = LoadRequestedServices();
+            //Console.WriteLine("\n\n");
 
 
 
-            foreach (RequestedService r in rs)
-            {
-                Console.WriteLine(r.ID + " " + r.CustomerName + " " + r.ServiceCode);
-            }
-            foreach (Agent a in c)
-            {
-                Console.WriteLine(a.ID + " " + a.Name);
-                IEnumerable<string> l = a.ServiceList;
-                foreach(string s in l)
-                {
-                    Console.WriteLine(s);
-                }
-            }
+            //foreach (RequestedService r in rs)
+            //{
+            //    Console.WriteLine(r.ID + " " + r.CustomerName + " " + r.ServiceCode);
+            //}
+            //foreach (Agent a in c)
+            //{
+            //    Console.WriteLine(a.ID + " " + a.Name);
+            //    IEnumerable<string> l = a.ServiceList;
+            //    foreach(string s in l)
+            //    {
+            //        Console.WriteLine(s);
+            //    }
+            //}
 
-           
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Menu());
         }
 
         public static List<Agent> LoadAgents()
@@ -73,17 +74,6 @@ namespace Proyecto_IA_2
 
                     )).ToList();
         }
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
