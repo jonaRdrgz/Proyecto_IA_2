@@ -66,6 +66,8 @@
       <DependentUpon>RequestServices.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Agent.cs" />
+    <Compile Include="Source\Gen.cs" />
+    <Compile Include="Source\GeneticAlgorithm.cs" />
     <Compile Include="Source\RequestedService.cs" />
     <Compile Include="Source\Service.cs" />
     <EmbeddedResource Include="Agents.resx">

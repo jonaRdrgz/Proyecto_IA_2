@@ -16,6 +16,7 @@ namespace Proyecto_IA_2.Source
         public string Name { get; set; }
         public List<string> ServiceList { get; set; }
         public int EarnedCommission {get; set;}
+        public int WorkTime { get; set; }
 
         public Agent()
         { }
@@ -26,6 +27,7 @@ namespace Proyecto_IA_2.Source
             this.Name = pName;
             this.ServiceList = pServiceList;
             this.EarnedCommission = 0;    // Comision ganada
+            this.WorkTime = 0;
         }
 
 
