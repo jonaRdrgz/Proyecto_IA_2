@@ -141,10 +141,29 @@ namespace Proyecto_IA_2.Source
 
             foreach(Agent agent in agentIsNotBusy.AsEnumerable())
             {
-                List<Agent> agentsToReplace = (from ag in AgentList
+                Agent agentToReplace = (from ag in AgentList
                                                where ag.ServiceList.Intersect(agent.ServiceList).Any() && ag.JobCounter > 1
-                                               select ag).ToList();
+                                               select ag).OrderByDescending(x => x.JobCounter).FirstOrDefault();
+                for (int i = 0; i < pRequestedServiceList.Count; i++)
+                {
+                    if(Gen1.ElementAt(i).Equals(agentToReplace) && agent.ServiceList.Contains(pRequestedServiceList.ElementAt(i).ServiceCode))
+                    {
+                        Service service = GetServiceValues(pRequestedServiceList.ElementAt(i).ServiceCode);
+
+                        agentToReplace.JobCounter -= 1;
+                        agentToReplace.WorkTime -= service.Time;
+                        agentToReplace.EarnedCommission -= service.Commission;
+                        agentToReplace.IsBusy = agentToReplace.JobCounter == 0 ? false : true;
+
+                        agent.JobCounter += 1;
+                        agent.WorkTime += service.Time;
+                        agent.EarnedCommission += service.Commission;
+                        agent.IsBusy = true;
+                    }
+                }
+
                 
+
             }
         }
 

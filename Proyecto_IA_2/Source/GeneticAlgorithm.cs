@@ -28,9 +28,9 @@ namespace Proyecto_IA_2.Source
             this.RequestedServiceList = pRequestedServiceList;
             random = new Random();
             /*Valores por default*/
-            this.GenerationsNumber = 100;
-            this.InitialPopulationNumber = 100;
-            this.ElitismNumber = 5;
+            this.GenerationsNumber = 150;
+            this.InitialPopulationNumber = 120;
+            this.ElitismNumber = 10;
 
 
 
