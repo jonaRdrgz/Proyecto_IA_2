@@ -3,34 +3,38 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using Proyecto_IA_2.Source;
 
-namespace Proyecto_IA_2
+namespace Proyecto_IA_2.Source
 {
-    static class Program
+    class XMLData
     {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public List<Agent> XMLAgents { get; set; }
+        public List<Service> XMLServices { get; set; }
+        public List<RequestedService> XMLRequestedServices { get; set; }
+
+        private static XMLData instance = null;
+
+        private XMLData()
         {
-            XMLData e = XMLData.GetInstance();
-            GeneticAlgorithm a = new GeneticAlgorithm(e.XMLAgents, e.XMLRequestedServices);
-            a.CreateInitialPopulation();
-            a.CalculateFitnessGenes();
-
-            Console.WriteLine(a.BestGenByGeneration());
-            a.CreateNextGeneration();
-            a.CalculateFitnessGenes();
-
-            Console.WriteLine(a.BestGenByGeneration());
-
+            this.XMLAgents = LoadAgents();
+            this.XMLServices = LoadServices();
+            this.XMLRequestedServices = LoadRequestedServices();
         }
 
-        public static List<Agent> LoadAgents()
+        public static XMLData GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new XMLData();
+            }
+               
+            return instance;
+        }
+
+
+        private  List<Agent> LoadAgents()
         {
             XElement XMLAgents = XElement.Load("../../XMLData/Agents.xml");
 
@@ -41,15 +45,15 @@ namespace Proyecto_IA_2
                         agent.Attribute("Name").Value,
 
                         (from service in agent.Elements("Service")
-                        select
-                        (
-                            service.Attribute("Code").Value
-                        )).ToList() // Lista de servicio 
+                         select
+                         (
+                             service.Attribute("Code").Value
+                         )).ToList() // Lista de servicio 
 
                     )).ToList();
         }
 
-        public static List<RequestedService> LoadRequestedServices()
+        private  List<RequestedService> LoadRequestedServices()
         {
             XElement XMLRequestedService = XElement.Load("../../XMLData/RequestedService.xml");
 
@@ -63,9 +67,9 @@ namespace Proyecto_IA_2
                     )).ToList();
         }
 
-        public static List<Service> LoadServices()
+        private  List<Service> LoadServices()
         {
-           
+
             XElement XMLServices = XElement.Load("../../XMLData/Services.xml");
 
             return (from service in XMLServices.Elements("Service")
@@ -78,10 +82,6 @@ namespace Proyecto_IA_2
 
                     )).ToList();
         }
-
-
-
-
 
 
 

@@ -58,6 +58,7 @@
     <Compile Include="Source\GeneticAlgorithm.cs" />
     <Compile Include="Source\RequestedService.cs" />
     <Compile Include="Source\Service.cs" />
+    <Compile Include="Source\XMLData.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -84,6 +85,7 @@
   <ItemGroup>
     <Content Include="XMLData\Agents.xml" />
     <Content Include="XMLData\RequestedService.xml" />
+    <Content Include="XMLData\Services.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

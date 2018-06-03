@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Services>
+  <Service Code ="ICE" ServiceName ="Instalación de Cocina Eléctirca" Time ="2" Commission ="250"/>
+  <Service Code ="ICG" ServiceName ="Instalación de Cocina de Gas" Time ="4" Commission ="400"/>
+  <Service Code ="ILA" ServiceName ="Instalación de Lavadora Automática" Time ="1" Commission ="200"/>
+  <Service Code ="RCE" ServiceName ="Reparación de Cocina Eléctrica" Time ="4" Commission ="300"/>
+  <Service Code ="RCG" ServiceName ="Reparación de Cocina de Gas" Time ="6" Commission ="500"/>
+  <Service Code ="RLA" ServiceName ="Instalación de Lavadora Automática" Time ="6" Commission ="250"/>
+</Services>
