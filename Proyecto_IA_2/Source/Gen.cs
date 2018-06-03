@@ -24,7 +24,7 @@ namespace Proyecto_IA_2.Source
             this.AgentList = pAgentList;
             /*valor que se dará por default, despues se calculará el fitness*/
             this.Fitness = 0;
-            this.MutationProbability = 5;
+            this.MutationProbability = 10;
 
             /*Valores necesarios para el Genetic Algorithm*/
             this.AgentesByServiceDictionary = new Dictionary<string, List<Agent>>();
@@ -43,7 +43,7 @@ namespace Proyecto_IA_2.Source
             double tmp = (from agent in Gen1
                        where agent.WorkTime > 40
                        select agent).ToList().Count;
-            double tmpJob = (from agent in Gen1
+            double tmpJob = (from agent in AgentList
                              where !agent.IsBusy
                              select agent).ToList().Count;
 
@@ -136,17 +136,18 @@ namespace Proyecto_IA_2.Source
         {
 
             List<Agent> agentIsNotBusy = (from agent in AgentList
-                                          where !agent.IsBusy
+                                          where agent.JobCounter < 1
                                           select agent).ToList();
 
             foreach(Agent agent in agentIsNotBusy.AsEnumerable())
             {
-                Agent agentToReplace = (from ag in AgentList
+                Agent agentToReplace = (from ag in Gen1
                                                where ag.ServiceList.Intersect(agent.ServiceList).Any() && ag.JobCounter > 1
                                                select ag).OrderByDescending(x => x.JobCounter).FirstOrDefault();
+
                 for (int i = 0; i < pRequestedServiceList.Count; i++)
                 {
-                    if(Gen1.ElementAt(i).Equals(agentToReplace) && agent.ServiceList.Contains(pRequestedServiceList.ElementAt(i).ServiceCode))
+                    if(Gen1.ElementAt(i).ID == agentToReplace.ID && agent.ServiceList.Contains(pRequestedServiceList.ElementAt(i).ServiceCode))
                     {
                         Service service = GetServiceValues(pRequestedServiceList.ElementAt(i).ServiceCode);
 
@@ -159,6 +160,10 @@ namespace Proyecto_IA_2.Source
                         agent.WorkTime += service.Time;
                         agent.EarnedCommission += service.Commission;
                         agent.IsBusy = true;
+
+                        //Swap 
+                        Gen1[i] = agent;
+
                     }
                 }
 

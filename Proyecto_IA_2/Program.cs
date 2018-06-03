@@ -21,18 +21,16 @@ namespace Proyecto_IA_2
             GeneticAlgorithm a = new GeneticAlgorithm(e.XMLAgents, e.XMLRequestedServices);
             a.CreateInitialPopulation();
             a.CalculateFitnessGenes();
-            Console.WriteLine(a.BestGenByGeneration());
-            Console.WriteLine("Generación 0...");
             for (int i = 0; i < a.GenerationsNumber; i++)
             {
-                Console.WriteLine("Generación " + i + "...");
                 a.CreateNextGeneration();
                 a.CalculateFitnessGenes();
-
-                Console.WriteLine(a.BestGenByGeneration());
             }
 
-            foreach(Agent r in a.BestGenByGeneration().AgentList.AsEnumerable())
+            
+            Console.WriteLine(a.BestGenByGeneration());
+            
+            foreach (Agent r in a.BestGenByGeneration().AgentList.AsEnumerable())
             {
                 Console.WriteLine(r);
             }

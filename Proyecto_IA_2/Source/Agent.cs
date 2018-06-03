@@ -48,7 +48,7 @@ namespace Proyecto_IA_2.Source
 
         public override string ToString()
         {
-            return ID + " :{\tName:" + Name + ", \tEarnedCommission:" + EarnedCommission + ",\tWorkTime: " + WorkTime + ",\tJobCounter: " + JobCounter + "}\n" ;
+            return ID + " :{\tName:" + Name + ", \tEarnedCommission:" + EarnedCommission + ",\tWorkTime: " + WorkTime + ",\tJobCounter: " + JobCounter + ",\nis Busy: " + IsBusy + "}\n" ;
         }
 
 

@@ -28,9 +28,9 @@ namespace Proyecto_IA_2.Source
             this.RequestedServiceList = pRequestedServiceList;
             random = new Random();
             /*Valores por default*/
-            this.GenerationsNumber = 150;
-            this.InitialPopulationNumber = 120;
-            this.ElitismNumber = 10;
+            this.GenerationsNumber = 250;
+            this.InitialPopulationNumber = 50;
+            this.ElitismNumber = 5;
 
 
 
@@ -120,7 +120,7 @@ namespace Proyecto_IA_2.Source
 
             child.Mutation(RequestedServiceList);
             child.ManipulatedMutation(RequestedServiceList);
-
+ 
             return child;
         }
 
