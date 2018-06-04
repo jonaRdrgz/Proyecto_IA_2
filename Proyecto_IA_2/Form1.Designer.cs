@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.agentsDataGridView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agentService = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loadAgents = new System.Windows.Forms.Button();
             this.mostrarAgents = new System.Windows.Forms.Button();
             this.ShowRequestedServices = new System.Windows.Forms.Button();
             this.LoadRequestedServices = new System.Windows.Forms.Button();
             this.requestedServicesDataGridView = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agentService = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idService = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.agentsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestedServicesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -61,13 +61,34 @@
             this.agentsDataGridView.TabIndex = 0;
             this.agentsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.agentsDataGridView_CellContentClick);
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 25;
+            // 
+            // agentName
+            // 
+            this.agentName.HeaderText = "Name of agent";
+            this.agentName.Name = "agentName";
+            this.agentName.ReadOnly = true;
+            this.agentName.Width = 155;
+            // 
+            // agentService
+            // 
+            this.agentService.HeaderText = "Service of agent";
+            this.agentService.Name = "agentService";
+            this.agentService.ReadOnly = true;
+            this.agentService.Width = 175;
+            // 
             // loadAgents
             // 
             this.loadAgents.Location = new System.Drawing.Point(12, 21);
             this.loadAgents.Name = "loadAgents";
             this.loadAgents.Size = new System.Drawing.Size(95, 23);
             this.loadAgents.TabIndex = 2;
-            this.loadAgents.Text = "Cargar agentes";
+            this.loadAgents.Text = "Load agents";
             this.loadAgents.UseVisualStyleBackColor = true;
             this.loadAgents.Click += new System.EventHandler(this.loadAgents_Click);
             // 
@@ -77,7 +98,7 @@
             this.mostrarAgents.Name = "mostrarAgents";
             this.mostrarAgents.Size = new System.Drawing.Size(75, 23);
             this.mostrarAgents.TabIndex = 3;
-            this.mostrarAgents.Text = "Mostrar";
+            this.mostrarAgents.Text = "Show";
             this.mostrarAgents.UseVisualStyleBackColor = true;
             this.mostrarAgents.Click += new System.EventHandler(this.mostrarAgents_Click);
             // 
@@ -116,37 +137,6 @@
             this.requestedServicesDataGridView.Size = new System.Drawing.Size(399, 348);
             this.requestedServicesDataGridView.TabIndex = 4;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(756, 404);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 25;
-            // 
-            // agentName
-            // 
-            this.agentName.HeaderText = "Name of agent";
-            this.agentName.Name = "agentName";
-            this.agentName.ReadOnly = true;
-            this.agentName.Width = 155;
-            // 
-            // agentService
-            // 
-            this.agentService.HeaderText = "Service of agent";
-            this.agentService.Name = "agentService";
-            this.agentService.ReadOnly = true;
-            this.agentService.Width = 175;
-            // 
             // idService
             // 
             this.idService.HeaderText = "ID";
@@ -168,11 +158,21 @@
             this.serviceCode.ReadOnly = true;
             this.serviceCode.Width = 175;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(756, 404);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Calculate";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 435);
+            this.ClientSize = new System.Drawing.Size(845, 435);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.ShowRequestedServices);
             this.Controls.Add(this.LoadRequestedServices);
@@ -181,7 +181,6 @@
             this.Controls.Add(this.loadAgents);
             this.Controls.Add(this.agentsDataGridView);
             this.Name = "Form1";
-            this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.agentsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestedServicesDataGridView)).EndInit();
             this.ResumeLayout(false);

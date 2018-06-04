@@ -51,23 +51,28 @@
             this.dgSalida.Location = new System.Drawing.Point(3, 3);
             this.dgSalida.Name = "dgSalida";
             this.dgSalida.ReadOnly = true;
-            this.dgSalida.Size = new System.Drawing.Size(636, 341);
+            this.dgSalida.Size = new System.Drawing.Size(670, 341);
             this.dgSalida.TabIndex = 0;
             // 
             // id
             // 
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 25;
             // 
             // name
             // 
             this.name.HeaderText = "Name";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 200;
             // 
             // EarnedCommission
             // 
             this.EarnedCommission.HeaderText = "Earned Commission";
             this.EarnedCommission.Name = "EarnedCommission";
+            this.EarnedCommission.ReadOnly = true;
             // 
             // WorkTime
             // 
@@ -80,15 +85,15 @@
             this.JobCounter.HeaderText = "Job Counter";
             this.JobCounter.Name = "JobCounter";
             this.JobCounter.ReadOnly = true;
+            this.JobCounter.Width = 200;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 351);
+            this.ClientSize = new System.Drawing.Size(682, 351);
             this.Controls.Add(this.dgSalida);
             this.Name = "Form2";
-            this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.dgSalida)).EndInit();
             this.ResumeLayout(false);
 
