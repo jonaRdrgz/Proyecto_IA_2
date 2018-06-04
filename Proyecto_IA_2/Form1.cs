@@ -90,10 +90,11 @@ namespace Proyecto_IA_2
 
             Console.WriteLine(a.BestGenByGeneration());
 
-            foreach (Agent r in a.BestGenByGeneration().AgentList.AsEnumerable())
-            {
-                Console.WriteLine(r);
-            }
+            Form2 frm = new Form2();
+            frm.Show();
+            frm.cargarGen(a);
+            
+
         }
     }
 }
