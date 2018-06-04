@@ -224,7 +224,7 @@ namespace Proyecto_IA_2
             }
             else if (e.Result.Text == "canta geléctric")
             {
-                agente.hablar("Cumbia cumbia cumbia, yeah");
+                agente.hablar("Cumbia cumbia cumbia tra-tra, yeah");
                 agente.hablar("Bueno, no tengo ritmo, espero haberte ayudado jaja xD saludos");
             }
             else if (e.Result.Text == "adiós geléctric" || e.Result.Text == "salir geléctric")
