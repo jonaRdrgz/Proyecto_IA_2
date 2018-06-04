@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,6 +65,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Agents.Designer.cs" />
+    <Compile Include="Source\AgenteDeVoz.cs" />
     <Compile Include="Source\Gen.cs" />
     <Compile Include="Source\GeneticAlgorithm.cs" />
     <Compile Include="Menu.cs">
@@ -108,7 +110,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="XMLData\Agents.xml" />
     <Content Include="XMLData\RequestedService.xml" />

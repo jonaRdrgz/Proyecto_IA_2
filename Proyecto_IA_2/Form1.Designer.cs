@@ -181,6 +181,7 @@
             this.Controls.Add(this.loadAgents);
             this.Controls.Add(this.agentsDataGridView);
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.agentsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestedServicesDataGridView)).EndInit();
             this.ResumeLayout(false);
