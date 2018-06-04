@@ -17,23 +17,28 @@ namespace Proyecto_IA_2
         [STAThread]
         static void Main()
         {
-            XMLData e = XMLData.GetInstance();
-            GeneticAlgorithm a = new GeneticAlgorithm(e.XMLAgents, e.XMLRequestedServices);
-            a.CreateInitialPopulation();
-            a.CalculateFitnessGenes();
-            for (int i = 0; i < a.GenerationsNumber; i++)
-            {
-                a.CreateNextGeneration();
-                a.CalculateFitnessGenes();
-            }
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+
+            //XMLData e = XMLData.GetInstance();
+            //GeneticAlgorithm a = new GeneticAlgorithm(e.XMLAgents, e.XMLRequestedServices);
+            //a.CreateInitialPopulation();
+            //a.CalculateFitnessGenes();
+            //for (int i = 0; i < a.GenerationsNumber; i++)
+            //{
+            //    a.CreateNextGeneration();
+            //    a.CalculateFitnessGenes();
+            //}
 
             
-            Console.WriteLine(a.BestGenByGeneration());
+            //Console.WriteLine(a.BestGenByGeneration());
             
-            foreach (Agent r in a.BestGenByGeneration().AgentList.AsEnumerable())
-            {
-                Console.WriteLine(r);
-            }
+            //foreach (Agent r in a.BestGenByGeneration().AgentList.AsEnumerable())
+            //{
+            //    Console.WriteLine(r);
+            //}
             
 
         }
