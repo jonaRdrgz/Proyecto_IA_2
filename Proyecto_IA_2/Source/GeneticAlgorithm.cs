@@ -14,6 +14,7 @@ namespace Proyecto_IA_2.Source
         public List<Gen> Population { get; set; }
         public List<Agent> AgentList { get; set; }
         public List<RequestedService> RequestedServiceList { get; set; }
+        public Dictionary<Agent, List<RequestedService>> ServicesByAgentsDictionary { get; set; }
         public static Random random;
 
 
@@ -37,7 +38,40 @@ namespace Proyecto_IA_2.Source
         }
 
         
-        
+        public Dictionary<string, List<string>> GetDictionary(Gen gen)
+        {
+            Dictionary<string, List<string>> RSAPro = new Dictionary<string, List<string>>();
+            foreach (Agent agent in gen.AgentList)
+            {
+                List<int> requestedServicesAgents = new List<int>();
+                for (int i = 0; i < gen.Gen1.Count; i++)
+                {
+                    if(gen.Gen1[i].ID == agent.ID)
+                    {
+                        requestedServicesAgents.Add(i);
+                    }
+
+                }
+
+                List<string> RSA = new List<string>();
+                foreach (int RS in requestedServicesAgents.AsEnumerable())
+                {
+                    RSA.Add(RequestedServiceList[RS].ID);
+                }
+
+
+               
+
+                RSAPro.Add(agent.ID, RSA);
+
+
+            }
+            
+
+
+
+            return RSAPro;
+        }
 
         public void CreateInitialPopulation()
         {
@@ -56,7 +90,7 @@ namespace Proyecto_IA_2.Source
 
         }
 
-       
+        
 
         public void CreateNextGeneration()
         {

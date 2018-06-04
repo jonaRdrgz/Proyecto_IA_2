@@ -39,7 +39,8 @@ namespace Proyecto_IA_2
             {
                 agentsDataGridView.Rows.Clear();
                 agentsDataGridView.Refresh();
-                agents = Program.LoadAgents();
+                XMLData xmlData = XMLData.GetInstance();
+                agents = xmlData.LoadAgents();
                 agente.hablar("Los agentes se cargaron con éxito");
             }
             catch (Exception ex)
@@ -61,6 +62,7 @@ namespace Proyecto_IA_2
         private void mostrarAgentes() {
             try
             {
+                agentsDataGridView.Rows.Clear();
                 foreach (Agent agent in agents)
                 {
                     string[] agentInfo = { "", "", "" };
@@ -99,7 +101,8 @@ namespace Proyecto_IA_2
 
                 requestedServicesDataGridView.Rows.Clear();
                 requestedServicesDataGridView.Refresh();
-                requestedServices = Program.LoadRequestedServices();
+                XMLData xmlData = XMLData.GetInstance();
+                requestedServices = xmlData.LoadRequestedServices();
                 agente.hablar("Las órdenes se cargaron con éxito");
             }
             catch (Exception ex)
@@ -117,7 +120,8 @@ namespace Proyecto_IA_2
 
         private void mostrarOrdenes() {
             try
-            {
+            { 
+                requestedServicesDataGridView.Rows.Clear();
                 foreach (RequestedService service in requestedServices)
                 {
                     string[] serviceInfo = { "", "", "" };
@@ -167,31 +171,7 @@ namespace Proyecto_IA_2
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
-            timer.Interval = 1;
-
-
-
-
-
-            timer.Tick += delegate (object s, EventArgs ee)
-            {
-                ((Timer)s).Stop();
-
-                agente.hablar("Hola bienvenido al programa de asignar tareas");
-                agente.hablar(" Mi nombre es Geléctric,  y te acompañaré en tu estadía");
-                agente.hablar(" Los comandos a utilizar son: cargar agentes, mostrar agente, cargar órdenes, mostrar órdenes y distribuir tareas");
-                agente.hablar("Para conocer la función de cada comando di: ayuda geléctric");
-
-                CultureInfo ci = new CultureInfo("es-ES");
-                agente.setEscucha(new SpeechRecognitionEngine(ci));
-                SpeechRecognitionEngine rec = agente.getEscuchaNumerica();
-                rec.SetInputToDefaultAudioDevice();
-                rec.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(lector);
-                rec.RecognizeAsync(RecognizeMode.Multiple);
-
-            };
-            timer.Start();
+            
         }
 
         private void lector(object sender, SpeechRecognizedEventArgs e)
@@ -224,7 +204,7 @@ namespace Proyecto_IA_2
             }
             else if (e.Result.Text == "canta geléctric")
             {
-                agente.hablar("Cumbia cumbia cumbia tra-tra, yeah");
+                //agente.hablar("Cumbia cumbia cumbia tra-tra, yeah");
                 agente.hablar("Bueno, no tengo ritmo, espero haberte ayudado jaja xD saludos");
             }
             else if (e.Result.Text == "adiós geléctric" || e.Result.Text == "salir geléctric")
@@ -250,5 +230,34 @@ namespace Proyecto_IA_2
                 agente.hablar("No entiendo, habla mas claro por favor");
             }
         }
-     }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Timer timer = new Timer();
+            timer.Interval = 1;
+
+
+
+
+
+            timer.Tick += delegate (object s, EventArgs ee)
+            {
+                ((Timer)s).Stop();
+
+                agente.hablar("Hola bienvenido al programa de asignar tareas");
+                agente.hablar(" Mi nombre es Geléctric,  y te acompañaré en tu estadía");
+                agente.hablar(" Los comandos a utilizar son: cargar agentes, mostrar agente, cargar órdenes, mostrar órdenes y distribuir tareas");
+                agente.hablar("Para conocer la función de cada comando di: ayuda geléctric");
+
+                CultureInfo ci = new CultureInfo("es-ES");
+                agente.setEscucha(new SpeechRecognitionEngine(ci));
+                SpeechRecognitionEngine rec = agente.getEscuchaNumerica();
+                rec.SetInputToDefaultAudioDevice();
+                rec.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(lector);
+                rec.RecognizeAsync(RecognizeMode.Multiple);
+
+            };
+            timer.Start();
+        }
+    }
 }

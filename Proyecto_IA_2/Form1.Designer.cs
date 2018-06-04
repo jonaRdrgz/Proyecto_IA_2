@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.agentsDataGridView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.agentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +42,7 @@
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.agentsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestedServicesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -84,42 +86,50 @@
             // 
             // loadAgents
             // 
+            this.loadAgents.BackColor = System.Drawing.Color.RoyalBlue;
+            this.loadAgents.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.loadAgents.Location = new System.Drawing.Point(12, 21);
             this.loadAgents.Name = "loadAgents";
             this.loadAgents.Size = new System.Drawing.Size(95, 23);
             this.loadAgents.TabIndex = 2;
             this.loadAgents.Text = "Load agents";
-            this.loadAgents.UseVisualStyleBackColor = true;
+            this.loadAgents.UseVisualStyleBackColor = false;
             this.loadAgents.Click += new System.EventHandler(this.loadAgents_Click);
             // 
             // mostrarAgents
             // 
+            this.mostrarAgents.BackColor = System.Drawing.Color.Navy;
+            this.mostrarAgents.ForeColor = System.Drawing.SystemColors.Control;
             this.mostrarAgents.Location = new System.Drawing.Point(113, 21);
             this.mostrarAgents.Name = "mostrarAgents";
             this.mostrarAgents.Size = new System.Drawing.Size(75, 23);
             this.mostrarAgents.TabIndex = 3;
             this.mostrarAgents.Text = "Show";
-            this.mostrarAgents.UseVisualStyleBackColor = true;
+            this.mostrarAgents.UseVisualStyleBackColor = false;
             this.mostrarAgents.Click += new System.EventHandler(this.mostrarAgents_Click);
             // 
             // ShowRequestedServices
             // 
+            this.ShowRequestedServices.BackColor = System.Drawing.Color.Navy;
+            this.ShowRequestedServices.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ShowRequestedServices.Location = new System.Drawing.Point(570, 21);
             this.ShowRequestedServices.Name = "ShowRequestedServices";
             this.ShowRequestedServices.Size = new System.Drawing.Size(75, 23);
             this.ShowRequestedServices.TabIndex = 6;
             this.ShowRequestedServices.Text = "Show";
-            this.ShowRequestedServices.UseVisualStyleBackColor = true;
+            this.ShowRequestedServices.UseVisualStyleBackColor = false;
             this.ShowRequestedServices.Click += new System.EventHandler(this.ShowRequestedServices_Click);
             // 
             // LoadRequestedServices
             // 
+            this.LoadRequestedServices.BackColor = System.Drawing.Color.RoyalBlue;
+            this.LoadRequestedServices.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LoadRequestedServices.Location = new System.Drawing.Point(432, 21);
             this.LoadRequestedServices.Name = "LoadRequestedServices";
             this.LoadRequestedServices.Size = new System.Drawing.Size(132, 23);
             this.LoadRequestedServices.TabIndex = 5;
             this.LoadRequestedServices.Text = "Load requested services";
-            this.LoadRequestedServices.UseVisualStyleBackColor = true;
+            this.LoadRequestedServices.UseVisualStyleBackColor = false;
             this.LoadRequestedServices.Click += new System.EventHandler(this.LoadRequestedServices_Click);
             // 
             // requestedServicesDataGridView
@@ -160,19 +170,33 @@
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.MediumAquamarine;
             this.button5.Location = new System.Drawing.Point(756, 404);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 7;
             this.button5.Text = "Calculate";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button1.Location = new System.Drawing.Point(12, 404);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Voice R";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(845, 435);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.ShowRequestedServices);
             this.Controls.Add(this.LoadRequestedServices);
@@ -203,5 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idService;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn serviceCode;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -18,9 +18,7 @@ namespace Proyecto_IA_2.Source
 
         private XMLData()
         {
-            this.XMLAgents = LoadAgents();
-            this.XMLServices = LoadServices();
-            this.XMLRequestedServices = LoadRequestedServices();
+            this.XMLServices = LoadServices(); 
         }
 
         public static XMLData GetInstance()
@@ -33,8 +31,8 @@ namespace Proyecto_IA_2.Source
             return instance;
         }
 
-
-        private  List<Agent> LoadAgents()
+      
+        public  List<Agent> LoadAgents()
         {
             XElement XMLAgents = XElement.Load("../../XMLData/Agents.xml");
 
@@ -53,7 +51,7 @@ namespace Proyecto_IA_2.Source
                     )).ToList();
         }
 
-        private  List<RequestedService> LoadRequestedServices()
+        public  List<RequestedService> LoadRequestedServices()
         {
             XElement XMLRequestedService = XElement.Load("../../XMLData/RequestedService.xml");
 
